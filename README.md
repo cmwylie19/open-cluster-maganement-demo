@@ -89,7 +89,7 @@ output
 cluster1-pvlkr   11m   kubernetes.io/kube-apiserver-client   system:serviceaccount:open-cluster-management:cluster-bootstrap   Pending
 ```
 
-> Based on my findings, the output of this command this will stay in a `Pending` state forever. After about 3 - 5 mins run `clusteradm accept` from the Hub to accept the Managed cluster.
+> Based on my findings, the output of this command this will stay in a `Pending` state forever. After about 1 - 2 mins run `clusteradm accept` from the Hub to accept the Managed cluster.
 
 Import the managed cluster to the Hub cluster
 ```
@@ -148,7 +148,7 @@ output
 managedcluster.cluster.open-cluster-management.io/cluster1 labeled
 ```
 
-Create `ManagedClusterSetBinding` to bind the `ManagedClusterSet` to the default namespace on the `Managed` Cluster
+Create `ManagedClusterSetBinding` to bind the `ManagedClusterSet` to the `default` Namespace
 ```
 k apply -f - --context $CTX_HUB_CLUSTER <<EOF
 apiVersion: cluster.open-cluster-management.io/v1alpha1
